@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6d432b">
+  <title>Parvaz Daily | پرواز روزانه</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-mark">✦</div>
+      <div class="brand-name">Parvaz Daily</div>
+      <div class="brand-sub">قدم‌های کوچک، رؤیاهای بزرگ</div>
+      <div class="side-date" id="todaySide"></div>
+      <nav id="nav">
+        <button class="nav-item active" data-page="home"><span>⌂</span> خانه</button>
+        <button class="nav-item" data-page="journal"><span>▤</span> دفتر روزانه</button>
+        <button class="nav-item" data-page="law"><span>⚖</span> درس‌های حقوقی</button>
+        <button class="nav-item" data-page="wellness"><span>❀</span> تغذیه و ورزش</button>
+        <button class="nav-item" data-page="expenses"><span>＄</span> هزینه‌ها</button>
+        <button class="nav-item" data-page="books"><span>▥</span> رمان‌ها و کتاب‌ها</button>
+        <button class="nav-item" data-page="plants"><span>♧</span> گل‌ها</button>
+      </nav>
+      <div class="sidebar-quote">«هر روز، فرصتی تازه برای رشد کردن است.»</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">یک قدم کوچک، هر روز</div>
+          <h1 id="pageTitle">روزت بخیر ✨</h1>
+        </div>
+        <div class="top-actions">
+          <button class="icon-button" id="themeBtn" aria-label="تغییر تم">☼</button>
+          <div class="avatar">پ</div>
+        </div>
+      </header>
+
+      <section class="page active" id="page-home">
+        <div class="hero-card">
+          <div class="hero-copy">
+            <span class="pill light">دفتر زندگی تو</span>
+            <h2>آرام پیش برو؛<br>اما هرگز متوقف نشو.</h2>
+            <p>امروز را با نیت خوب شروع کن و به خودت فرصت شکوفا شدن بده.</p>
+            <button class="primary-btn" data-go="journal">ثبت حال امروز <span>←</span></button>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="moon">☾</div><div class="flying-book b1">▱</div><div class="flying-book b2">▱</div>
+            <div class="sun-glow"></div><div class="cityline">⌂　♧　⌂　♧　⌂</div>
+          </div>
+        </div>
+
+        <div class="section-heading"><div><span class="eyebrow">فضای شخصی تو</span><h2>از کجا شروع کنیم؟</h2></div><span class="tiny-date" id="todayHome"></span></div>
+        <div class="feature-grid">
+          <button class="feature-card peach" data-go="law"><span class="feature-icon">⚖</span><b>درس‌های حقوقی</b><small>نکته‌ها و مرور درس</small><span class="card-arrow">↙</span></button>
+          <button class="feature-card sage" data-go="wellness"><span class="feature-icon">♡</span><b>تغذیه و ورزش</b><small>مراقبت از خودت</small><span class="card-arrow">↙</span></button>
+          <button class="feature-card cream" data-go="expenses"><span class="feature-icon">＄</span><b>هزینه‌ها</b><small>مدیریت دخل‌وخرج</small><span class="card-arrow">↙</span></button>
+          <button class="feature-card cream" data-go="books"><span class="feature-icon">▥</span><b>رمان‌ها و کتاب‌ها</b><small>ردّ کتاب‌هایی که می‌خوانی</small><span class="card-arrow">↙</span></button>
+          <button class="feature-card sage" data-go="plants"><span class="feature-icon">❀</span><b>گل‌ها</b><small>یادداشت‌های نگهداری</small><span class="card-arrow">↙</span></button>
+          <button class="feature-card peach" data-go="journal"><span class="feature-icon">▤</span><b>دفتر روزانه</b><small>ثبت لحظه‌های زندگی</small><span class="card-arrow">↙</span></button>
+        </div>
+        <div class="bottom-grid">
+          <div class="panel quote-panel"><div class="panel-title">یادآوری امروز <span>✧</span></div><p id="dailyQuote">لازم نیست همه‌چیز را امروز تمام کنی؛ فقط قدم بعدی را بردار.</p></div>
+          <div class="panel progress-panel"><div class="panel-title">حال و هوای امروز <span>☼</span></div><div class="mood-row"><button class="mood" data-mood="عالی">😄</button><button class="mood" data-mood="خوب">🙂</button><button class="mood" data-mood="معمولی">😐</button><button class="mood" data-mood="خسته">😔</button><button class="mood" data-mood="آرام">😌</button></div><div id="moodMessage" class="muted">حال امروزت را انتخاب کن.</div></div>
+        </div>
+      </section>
+
+      <section class="page" id="page-journal">
+        <div class="page-intro"><span class="big-icon">▤</span><div><h2>دفتر روزانه</h2><p>چند خط برای خودت؛ همین کافی است.</p></div></div>
+        <div class="panel form-panel">
+          <label>تاریخ <input id="journalDate" type="date"></label>
+          <label>کارهای امروز</label>
+          <div class="task-entry"><input id="taskInput" placeholder="مثلاً: مطالعه حقوق مدنی"><button class="primary-btn" id="addTask">افزودن +</button></div>
+          <ul class="task-list" id="taskList"></ul>
+          <label>امروز بابت چه چیزهایی قدردانم؟ <textarea id="gratitude" rows="3" placeholder="سه چیز کوچک یا بزرگ..."></textarea></label>
+          <label>یادداشت روز <textarea id="journalNote" rows="5" placeholder="هر چیزی که دوست داری اینجا بنویس..."></textarea></label>
+          <button class="primary-btn" id="saveJournal">ذخیره روز <span>←</span></button>
+          <p class="muted" id="journalStatus"></p>
+        </div>
+      </section>
+
+      <section class="page" id="page-law">
+        <div class="page-intro"><span class="big-icon">⚖</span><div><h2>درس‌های حقوقی</h2><p>نکته‌ها، منابع و مرورهای کوتاهت را یک‌جا نگه دار.</p></div></div>
+        <div class="tabs"><button class="tab active" data-lawtab="نکته درسی">نکته درسی</button><button class="tab" data-lawtab="تحلیل">تحلیل</button><button class="tab" data-lawtab="منابع">منابع</button></div>
+        <div class="panel form-panel">
+          <label>عنوان <input id="lawTitle" placeholder="عنوان نکته یا موضوع..."></label>
+          <label>یادداشت <textarea id="lawBody" rows="5" placeholder="یادداشت خود را اینجا بنویس..."></textarea></label>
+          <label>دسته‌بندی <select id="lawCategory"><option>حقوق مدنی</option><option>حقوق جزا</option><option>آیین دادرسی</option><option>حقوق تجارت</option><option>سایر</option></select></label>
+          <button class="primary-btn" id="saveLaw">افزودن یادداشت +</button>
+        </div>
+        <div class="saved-list" id="lawList"></div>
+      </section>
+
+      <section class="page" id="page-wellness">
+        <div class="page-intro"><span class="big-icon">♡</span><div><h2>تغذیه و ورزش</h2><p>مراقبت‌های کوچک، برای حال بهتر.</p></div></div>
+        <div class="tabs"><button class="tab active" data-welltab="غذاها">غذاها</button><button class="tab" data-welltab="ورزش">ورزش</button><button class="tab" data-welltab="آب و مراقبت">آب و مراقبت</button></div>
+        <div class="wellness-grid">
+          <div class="panel form-panel">
+            <h3 id="wellFormTitle">ثبت وعده غذایی</h3>
+            <label>عنوان <input id="wellTitle" placeholder="مثلاً: صبحانه"></label>
+            <label>جزئیات <textarea id="wellBody" rows="3" placeholder="چه چیزی خوردی یا چه فعالیتی انجام دادی؟"></textarea></label>
+            <label>زمان <select id="wellTime"><option>صبح</option><option>ظهر</option><option>عصر</option><option>شب</option></select></label>
+            <button class="primary-btn" id="saveWell">ثبت مورد +</button>
+          </div>
+          <div class="panel"><div class="panel-title">ثبت‌های اخیر <span>✧</span></div><div id="wellList" class="saved-list compact"></div></div>
+        </div>
+      </section>
+
+      <section class="page" id="page-expenses">
+        <div class="page-intro"><span class="big-icon">＄</span><div><h2>هزینه‌ها</h2><p>آگاهانه ثبت کن تا تصویر روشن‌تری داشته باشی.</p></div></div>
+        <div class="stats-grid"><div class="stat-card"><span>مجموع هزینه‌ها</span><strong id="expenseTotal">۰ تومان</strong></div><div class="stat-card sage-stat"><span>تعداد ثبت‌ها</span><strong id="expenseCount">۰</strong></div></div>
+        <div class="panel form-panel">
+          <h3>ثبت هزینه جدید</h3>
+          <label>عنوان هزینه <input id="expenseTitle" placeholder="مثلاً خرید کتاب"></label>
+          <div class="two-col"><label>مبلغ (تومان) <input id="expenseAmount" type="number" min="0" placeholder="مثلاً ۱۰۰۰۰۰"></label><label>دسته‌بندی <select id="expenseCategory"><option>غذا و خوراکی</option><option>کتاب و آموزش</option><option>حمل‌ونقل</option><option>خانه</option><option>تفریح</option><option>سایر</option></select></label></div>
+          <label>توضیحات (اختیاری) <input id="expenseNote" placeholder="توضیح کوتاه..."></label>
+          <button class="primary-btn" id="saveExpense">ثبت هزینه +</button>
+        </div>
+        <div class="panel"><div class="panel-title">آخرین هزینه‌ها</div><div id="expenseList" class="saved-list"></div></div>
+      </section>
+
+      <section class="page" id="page-books">
+        <div class="page-intro"><span class="big-icon">▥</span><div><h2>رمان‌ها و کتاب‌ها</h2><p>هر کتاب، شروع یک سفر جدید است.</p></div></div>
+        <div class="panel form-panel">
+          <label>نام کتاب <input id="bookTitle" placeholder="نام کتاب یا رمان..."></label>
+          <div class="two-col"><label>نویسنده <input id="bookAuthor" placeholder="نام نویسنده"></label><label>وضعیت <select id="bookStatus"><option>در حال مطالعه</option><option>تمام شده</option><option>برای بعد</option></select></label></div>
+          <label>یادداشت یا نقل‌قول کوتاه <textarea id="bookNote" rows="3" placeholder="برداشتت از کتاب..."></textarea></label>
+          <button class="primary-btn" id="saveBook">افزودن کتاب +</button>
+        </div>
+        <div class="saved-list" id="bookList"></div>
+      </section>
+
+      <section class="page" id="page-plants">
+        <div class="page-intro"><span class="big-icon">❀</span><div><h2>گل‌ها</h2><p>به رشد آرام چیزهای دوست‌داشتنی توجه کن.</p></div></div>
+        <div class="plant-grid" id="plantPresets">
+          <button class="plant-card" data-plant="پتوس"><span>🌿</span><b>پتوس</b><small>نور غیرمستقیم</small></button>
+          <button class="plant-card" data-plant="سانسوریا"><span>🪴</span><b>سانسوریا</b><small>آبیاری کم</small></button>
+          <button class="plant-card" data-plant="بنفشه آفریقایی"><span>🌸</span><b>بنفشه آفریقایی</b><small>نور ملایم</small></button>
+        </div>
+        <div class="panel form-panel">
+          <h3>یادداشت گل‌ها</h3>
+          <label>نام گیاه <input id="plantTitle" placeholder="نام گل یا گیاه"></label>
+          <label>یادداشت مراقبت <textarea id="plantNote" rows="3" placeholder="مثلاً امروز آبیاری شد..."></textarea></label>
+          <button class="primary-btn" id="savePlant">ثبت یادداشت +</button>
+        </div>
+        <div class="saved-list" id="plantList"></div>
+      </section>
+
+      <section class="page" id="page-done">
+        <div class="done-card"><div class="done-window">✦</div><h2>روزت تمام شد...</h2><p>به روز بعد برویم؟</p><div class="done-flower">🌷</div><button class="primary-btn" data-go="journal">رفتن به روز بعد <span>←</span></button></div>
+      </section>
+      <footer>Parvaz Daily <span>✧</span> برای روزهایی که می‌خواهی آگاهانه‌تر زندگی کنی</footer>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
